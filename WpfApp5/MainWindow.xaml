@@ -4,8 +4,22 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp5"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <col:ArrayList x:Key="fonts">
+            <sys:String>Arial</sys:String>
+            <sys:String>Times New Roman</sys:String>
+            <sys:String>Helvetica</sys:String>
+        </col:ArrayList>
+        <col:ArrayList x:Key="fontSizes">
+            <sys:Int32>12</sys:Int32>
+            <sys:Int32>14</sys:Int32>
+            <sys:Int32>16</sys:Int32>
+        </col:ArrayList>
+    </Window.Resources>
     <Window.CommandBindings>
         <CommandBinding Command="local:MyCommands.Exit" Executed="ExitExecuted"/>
         <CommandBinding Command="Open" Executed="OpenExecuted"/>
@@ -28,16 +42,12 @@
         </Menu>
         <ToolBarTray Grid.Row="1">
             <ToolBar Margin="2" Padding="2">
-                <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200" SelectionChanged="ComboBox_SelectionChanged">
-                    <TextBlock Text="Arial"/>
-                    <TextBlock Text="Times New Roman"/>
-                    <TextBlock Text="Helvetica"/>
-                </ComboBox>
-                <ComboBox Margin="5" Padding="5" SelectedIndex="2" Width="50" SelectionChanged="ComboBox_SelectionChanged_1">
-                    <TextBlock Text="12"/>
-                    <TextBlock Text="14"/>
-                    <TextBlock Text="16"/>
-                </ComboBox>
+                <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200" SelectionChanged="ComboBox_SelectionChanged" 
+                          ItemsSource="{StaticResource fonts}"/>
+
+                <ComboBox Margin="5" Padding="5" SelectedIndex="2" Width="50" SelectionChanged="ComboBox_SelectionChanged_1"
+                          ItemsSource="{StaticResource fontSizes}"/>
+
             </ToolBar>
             <ToolBar Margin="2" Padding="2">
                 <ToggleButton Height="25" Width="25" Click="Button_Click" IsChecked="False">
