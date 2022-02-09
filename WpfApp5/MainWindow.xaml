@@ -32,12 +32,16 @@
         
         <ToolBarTray Grid.Row="1">
             <ToolBar Margin="2" Padding="2">
-                <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200" SelectionChanged="ComboBox_SelectionChanged" 
+                <ComboBox Margin="5" Padding="5" SelectedIndex="0" Width="200"
+                          SelectionChanged="ComboBox_SelectionChanged" 
                           ItemsSource="{StaticResource fonts}"
-                          Style="{DynamicResource cbStyle}"/>
-                <ComboBox Margin="5" Padding="5" SelectedIndex="2" Width="50" SelectionChanged="ComboBox_SelectionChanged_1"
+                          Style="{DynamicResource cbStyle}"
+                          x:Name="cbFonts"/>
+                <ComboBox Margin="5" Padding="5" SelectedIndex="2" Width="50"
+                          SelectionChanged="ComboBox_SelectionChanged_1"
                           ItemsSource="{StaticResource fontSizes}"
-                          Style="{DynamicResource cbStyle}"/>
+                          Style="{DynamicResource cbStyle}"
+                          x:Name="cbFontSizes"/>
             </ToolBar>
             <ToolBar Margin="2" Padding="2">
                 <ToggleButton Height="25" Width="25" Click="Button_Click" IsChecked="False">
@@ -63,19 +67,19 @@
         <TextBox x:Name="textBox"
                  Grid.Row="2"
                  Margin="5" Padding="5"
-                 FontSize="16"
-                 FontFamily="Arial"
+                 FontSize="{Binding ElementName=cbFontSizes, Path=Text}"
+                 FontFamily="{Binding ElementName=cbFonts, Path=Text}"
                  TextWrapping="Wrap"
                  VerticalScrollBarVisibility="Auto">
         </TextBox>
-        
+
         <ComboBox x:Name="ColorThemes"
-                  SelectedIndex="1"
+                  SelectedIndex="0"
                   Width="100"
                   HorizontalAlignment="Right"
                   Margin="0,15,20,15"
                   Grid.Row="1" SelectionChanged="ColorThemes_SelectionChanged"
-                  Style="{DynamicResource cbStyle}"> <!--не срабатывает на комбобоксе-->
+                  Style="{DynamicResource cbStyle}">
             <ComboBoxItem Content="Светлая тема"/>
             <ComboBoxItem Content="Темная тема"/>
         </ComboBox>
