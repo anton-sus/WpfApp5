@@ -75,7 +75,7 @@
                   HorizontalAlignment="Right"
                   Margin="0,15,20,15"
                   Grid.Row="1" SelectionChanged="ColorThemes_SelectionChanged"
-                  Style="{DynamicResource cbStyle}">
+                  Style="{DynamicResource cbStyle}"> <!--не срабатывает на комбобоксе-->
             <ComboBoxItem Content="Светлая тема"/>
             <ComboBoxItem Content="Темная тема"/>
         </ComboBox>
