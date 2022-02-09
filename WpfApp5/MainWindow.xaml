@@ -8,18 +8,7 @@
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Window.Resources>
-        <col:ArrayList x:Key="fonts">
-            <sys:String>Arial</sys:String>
-            <sys:String>Times New Roman</sys:String>
-            <sys:String>Helvetica</sys:String>
-        </col:ArrayList>
-        <col:ArrayList x:Key="fontSizes">
-            <sys:Int32>12</sys:Int32>
-            <sys:Int32>14</sys:Int32>
-            <sys:Int32>16</sys:Int32>
-        </col:ArrayList>
-    </Window.Resources>
+
     <Window.CommandBindings>
         <CommandBinding Command="local:MyCommands.Exit" Executed="ExitExecuted"/>
         <CommandBinding Command="Open" Executed="OpenExecuted"/>
