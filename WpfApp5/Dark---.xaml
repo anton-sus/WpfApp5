@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="WindowStyle">
+        <Setter Property="Control.Background" Value="DimGray"/>
+        <Setter Property="Control.Foreground" Value="White"/>
+    </Style>
+
+    <Style x:Key="TextBoxStyle">
+        <Setter Property="TextBox.Foreground" Value="White"/>
+        <Setter Property="TextBox.Background" Value="Black"/>
+    </Style>
+</ResourceDictionary>
